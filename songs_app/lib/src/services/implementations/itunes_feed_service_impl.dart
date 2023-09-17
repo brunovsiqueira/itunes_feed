@@ -3,7 +3,7 @@ import 'package:songs_app/src/enums/itunes_rss_channel.dart';
 
 import 'package:songs_app/src/errors/failures/base_failure.dart';
 
-import 'package:songs_app/src/models/itunes_entry_model.dart';
+import 'package:songs_app/src/models/feed_entry_model.dart';
 
 import '../../datasources/interfaces/itunes_feed_remote_datasource.dart';
 import '../../errors/exceptions/itunes_feed_exceptions.dart';
@@ -21,7 +21,7 @@ class ItunesFeedServiceImpl implements ItunesFeedService {
     required this.itunesFeedRemoteDatsource,
   });
   @override
-  Future<Either<BaseFailure, List<ItunesEntryModel>>> getFeedEntries({
+  Future<Either<BaseFailure, List<FeedEntryModel>>> getFeedEntries({
     required ItunesRssChannelEnum itunesRssChannel,
     int? limit,
   }) async {

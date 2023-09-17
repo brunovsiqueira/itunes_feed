@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:songs_app/src/datasources/interfaces/itunes_feed_remote_datasource.dart';
-import 'package:songs_app/src/models/itunes_entry_model.dart';
+import 'package:songs_app/src/models/feed_entry_model.dart';
 
 import '../../enums/itunes_rss_channel.dart';
 import '../../errors/exceptions/itunes_feed_exceptions.dart';
@@ -18,7 +18,7 @@ class ItunesFeedRemoteDatsourceImpl implements ItunesFeedRemoteDatsource {
   });
 
   @override
-  Future<List<ItunesEntryModel>> getFeedEntries({
+  Future<List<FeedEntryModel>> getFeedEntries({
     required ItunesRssChannelEnum itunesRssChannel,
     int? limit,
   }) async {
@@ -27,7 +27,7 @@ class ItunesFeedRemoteDatsourceImpl implements ItunesFeedRemoteDatsource {
     try {
       Response response = await api.httpGet(url: url);
       return (jsonDecode(response.data)['feed']['entry'] as List)
-          .map((e) => ItunesEntryModel.fromJson(e))
+          .map((e) => FeedEntryModel.fromJson(e))
           .toList();
     } on DioException catch (e) {
       throw GetFeedEntriesException(dioException: e);

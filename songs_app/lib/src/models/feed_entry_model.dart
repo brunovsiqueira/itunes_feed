@@ -1,4 +1,6 @@
-class ItunesEntryModel {
+import 'package:equatable/equatable.dart';
+
+class FeedEntryModel extends Equatable {
   final String name;
   final List<String> imageUrls;
   final int itemCount;
@@ -13,7 +15,7 @@ class ItunesEntryModel {
   final String category;
   final String releaseDate;
 
-  ItunesEntryModel({
+  FeedEntryModel({
     required this.name,
     required this.imageUrls,
     required this.itemCount,
@@ -29,7 +31,7 @@ class ItunesEntryModel {
     required this.releaseDate,
   });
 
-  factory ItunesEntryModel.fromJson(Map<String, dynamic> json) {
+  factory FeedEntryModel.fromJson(Map<String, dynamic> json) {
     final name = json['im:name']['label'];
     final imageUrls = (json['im:image'] as List)
         .map((image) => image['label'] as String)
@@ -47,7 +49,7 @@ class ItunesEntryModel {
     final category = json['category']['attributes']['term'];
     final releaseDate = json['im:releaseDate']['label'];
 
-    return ItunesEntryModel(
+    return FeedEntryModel(
       name: name,
       imageUrls: imageUrls,
       itemCount: itemCount,
@@ -63,4 +65,21 @@ class ItunesEntryModel {
       releaseDate: releaseDate,
     );
   }
+
+  @override
+  List<Object?> get props => [
+        name,
+        imageUrls,
+        itemCount,
+        price,
+        currency,
+        contentType,
+        rights,
+        title,
+        link,
+        id,
+        artist,
+        category,
+        releaseDate,
+      ];
 }

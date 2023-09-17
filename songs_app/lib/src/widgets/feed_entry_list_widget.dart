@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 
-import '../models/itunes_entry_model.dart';
+import '../models/feed_entry_model.dart';
 
-class EntrySearchListWidget extends StatefulWidget {
-  final List<ItunesEntryModel> entryList;
-  const EntrySearchListWidget({
+class FeedEntrySearchListWidget extends StatefulWidget {
+  final List<FeedEntryModel> entryList;
+  const FeedEntrySearchListWidget({
     super.key,
     required this.entryList,
   });
 
   @override
-  State<EntrySearchListWidget> createState() => _EntrySearchListWidgetState();
+  State<FeedEntrySearchListWidget> createState() =>
+      _FeedEntrySearchListWidgetState();
 }
 
-class _EntrySearchListWidgetState extends State<EntrySearchListWidget> {
-  List<ItunesEntryModel> filteredList = [];
+class _FeedEntrySearchListWidgetState extends State<FeedEntrySearchListWidget> {
+  List<FeedEntryModel> filteredList = [];
 
   @override
   void initState() {
@@ -62,7 +63,7 @@ class _EntrySearchListWidgetState extends State<EntrySearchListWidget> {
               padding: const EdgeInsets.all(8.0),
               child: ListView.builder(
                 itemBuilder: (context, index) {
-                  ItunesEntryModel entryItem = filteredList[index];
+                  FeedEntryModel entryItem = filteredList[index];
 
                   return Text(entryItem
                       .name); //TODO: create better EntryItemWidget using main entry attributes

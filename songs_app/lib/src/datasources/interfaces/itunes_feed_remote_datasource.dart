@@ -1,9 +1,9 @@
-import 'package:songs_app/src/models/itunes_entry_model.dart';
+import 'package:songs_app/src/models/feed_entry_model.dart';
 
 import '../../enums/itunes_rss_channel.dart';
 
 abstract interface class ItunesFeedRemoteDatsource {
-  Future<List<ItunesEntryModel>> getFeedEntries({
+  Future<List<FeedEntryModel>> getFeedEntries({
     required ItunesRssChannelEnum itunesRssChannel,
     int? limit,
   });
