@@ -21,11 +21,8 @@ final itunesFeedServiceProvider = Provider<ItunesFeedService>((ref) {
 final itunesFeedEntryListProvider =
     FutureProvider.family<List<FeedEntryModel>, ItunesRssChannelEnum>(
         (ref, rssChannel) async {
-  //TODO: separate API call on a datasource + service, making appropriate error handling
-
   var result = await ref.read(itunesFeedServiceProvider).getFeedEntries(
-        itunesRssChannel:
-            rssChannel, //TODO: use family and pass ItunesRssChannelEnum by parameter from screens
+        itunesRssChannel: rssChannel,
       );
   List<FeedEntryModel> entryList = [];
   result.fold((failure) {
