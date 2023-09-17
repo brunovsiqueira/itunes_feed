@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:songs_app/src/datasources/interfaces/itunes_feed_remote_datasource.dart';
 import 'package:songs_app/src/models/itunes_entry_model.dart';
 
+import '../../enums/itunes_rss_channel.dart';
 import '../../errors/exceptions/itunes_feed_exceptions.dart';
 import '../../network/interfaces/api.dart';
 
@@ -18,7 +19,7 @@ class ItunesFeedRemoteDatsourceImpl implements ItunesFeedRemoteDatsource {
 
   @override
   Future<List<ItunesEntryModel>> getFeedEntries({
-    required itunesRssChannel,
+    required ItunesRssChannelEnum itunesRssChannel,
     int? limit,
   }) async {
     final String url =

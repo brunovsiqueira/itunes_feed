@@ -1,4 +1,4 @@
-enum ItunesRssChannel {
+enum ItunesRssChannelEnum {
   topsongs,
   topalbums,
   topmovies,
