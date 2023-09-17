@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:songs_app/src/models/itunes_entry_model.dart';
-import 'package:songs_app/src/providers/album_list_provider.dart';
+import 'package:songs_app/src/providers/itunes_feed_entry_list_provider.dart';
 import 'package:songs_app/src/widgets/entry_list_widget.dart';
 
 class HomePage extends ConsumerStatefulWidget {
@@ -19,7 +19,7 @@ class _HomePageState extends ConsumerState<HomePage> {
   @override
   Widget build(BuildContext context) {
     AsyncValue<List<ItunesEntryModel>> asyncResponse =
-        ref.watch(albumListProvider);
+        ref.watch(itunesFeedEntryListProvider);
 
     return asyncResponse.when(
       data: (entryList) {
