@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:songs_app/widgets/song_list_widget.dart';
+import 'package:songs_app/src/widgets/song_list_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

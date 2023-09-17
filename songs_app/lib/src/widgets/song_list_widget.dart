@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:songs_app/models/itunes_entry_model.dart';
-import 'package:songs_app/providers/album_list_provider.dart';
+
+import '../models/itunes_entry_model.dart';
+import '../providers/album_list_provider.dart';
 
 class SongListWidget extends ConsumerWidget {
   const SongListWidget({super.key});

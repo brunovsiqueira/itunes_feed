@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:songs_app/pages/home_page.dart';
+import 'package:songs_app/src/pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());

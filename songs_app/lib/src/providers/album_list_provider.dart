@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:songs_app/models/itunes_entry_model.dart';
+
+import '../models/itunes_entry_model.dart';
 
 final albumListProviderProvider =
     FutureProvider<List<ItunesEntryModel>>((ref) async {
