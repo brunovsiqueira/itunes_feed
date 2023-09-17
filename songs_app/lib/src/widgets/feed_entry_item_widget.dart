@@ -24,11 +24,12 @@ class FeedEntryItemWidget extends StatelessWidget {
                 Text(feedEntry.title),
                 Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                   const Icon(Icons.rocket_launch),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child:
-                        Text(DateFormat.yMMMd().format(feedEntry.releaseDate)),
-                  ),
+                  if (feedEntry.releaseDate != null)
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: Text(
+                          DateFormat.yMMMd().format(feedEntry.releaseDate!)),
+                    ),
                 ]),
               ],
             ),
