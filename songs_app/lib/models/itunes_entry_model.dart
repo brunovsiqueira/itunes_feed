@@ -1,4 +1,4 @@
-class AlbumEntryModel {
+class ItunesEntryModel {
   final String name;
   final List<String> imageUrls;
   final int itemCount;
@@ -13,7 +13,7 @@ class AlbumEntryModel {
   final String category;
   final String releaseDate;
 
-  AlbumEntryModel({
+  ItunesEntryModel({
     required this.name,
     required this.imageUrls,
     required this.itemCount,
@@ -29,7 +29,7 @@ class AlbumEntryModel {
     required this.releaseDate,
   });
 
-  factory AlbumEntryModel.fromJson(Map<String, dynamic> json) {
+  factory ItunesEntryModel.fromJson(Map<String, dynamic> json) {
     final name = json['im:name']['label'];
     final imageUrls =
         (json['im:image']).map((image) => image['label']).toList();
@@ -46,7 +46,7 @@ class AlbumEntryModel {
     final category = json['category']['attributes']['term'];
     final releaseDate = json['im:releaseDate']['label'];
 
-    return AlbumEntryModel(
+    return ItunesEntryModel(
       name: name,
       imageUrls: imageUrls,
       itemCount: itemCount,
