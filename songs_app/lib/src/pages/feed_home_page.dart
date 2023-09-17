@@ -4,8 +4,8 @@ import 'package:songs_app/src/models/feed_entry_model.dart';
 import 'package:songs_app/src/providers/itunes_feed_entry_list_provider.dart';
 import 'package:songs_app/src/widgets/feed_entry_list_widget.dart';
 
-class HomePage extends ConsumerStatefulWidget {
-  const HomePage({
+class FeedHomePage extends ConsumerStatefulWidget {
+  const FeedHomePage({
     super.key,
   });
 
@@ -13,7 +13,7 @@ class HomePage extends ConsumerStatefulWidget {
   ConsumerState<ConsumerStatefulWidget> createState() => _HomePageState();
 }
 
-class _HomePageState extends ConsumerState<HomePage> {
+class _HomePageState extends ConsumerState<FeedHomePage> {
   List<FeedEntryModel> filteredList = [];
 
   @override

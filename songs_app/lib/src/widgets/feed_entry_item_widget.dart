@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:songs_app/src/models/feed_entry_model.dart';
 import 'package:songs_app/src/widgets/shimmer_widget.dart';
 
+import '../routes.dart';
+
 class FeedEntryItemWidget extends StatelessWidget {
   final FeedEntryModel feedEntry;
   const FeedEntryItemWidget({super.key, required this.feedEntry});
@@ -13,7 +15,18 @@ class FeedEntryItemWidget extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Card(
         child: ListTile(
-          title: Hero(
+          title: Text(feedEntry.title),
+          subtitle: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(children: [
+              const Icon(Icons.rocket_launch),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(feedEntry.releaseDate),
+              )
+            ]),
+          ),
+          leading: Hero(
             tag: 'rover_image${feedEntry.id}',
             child: CachedNetworkImage(
               imageUrl: feedEntry.imageUrl,
@@ -26,19 +39,9 @@ class FeedEntryItemWidget extends StatelessWidget {
               errorWidget: (context, url, error) => Container(),
             ),
           ),
-          subtitle: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(children: [
-              const Icon(Icons.launch),
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Text(feedEntry.releaseDate),
-              )
-            ]),
-          ),
           onTap: () {
             Navigator.of(context)
-                .pushNamed(Routes.roversDetails, arguments: roverItem);
+                .pushNamed(Routes.feedEntryDetails, arguments: feedEntry);
           },
         ),
       ),
