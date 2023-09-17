@@ -23,7 +23,7 @@ class ItunesFeedRemoteDatsourceImpl implements ItunesFeedRemoteDatsource {
     int? limit,
   }) async {
     final String url =
-        '$baseUrl/us/${itunesRssChannel.name}/topalbums/limit=${limit ?? 100}/json';
+        '$baseUrl/us/rss/${itunesRssChannel.name}/limit=${limit ?? 100}/json';
     try {
       Response response = await api.httpGet(url: url);
       return (jsonDecode(response.data)['feed']['entry'] as List)
