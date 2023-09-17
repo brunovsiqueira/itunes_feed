@@ -31,8 +31,9 @@ class ItunesEntryModel {
 
   factory ItunesEntryModel.fromJson(Map<String, dynamic> json) {
     final name = json['im:name']['label'];
-    final imageUrls =
-        (json['im:image']).map((image) => image['label']).toList();
+    final imageUrls = (json['im:image'] as List)
+        .map((image) => image['label'] as String)
+        .toList();
     final itemCount = int.parse(json['im:itemCount']['label']);
     final price = double.parse(json['im:price']['attributes']['amount']);
     final currency = json['im:price']['attributes']['currency'];
