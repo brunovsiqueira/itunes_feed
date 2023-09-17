@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 
 class FeedEntryModel extends Equatable {
   final String name;
-  final List<String> imageUrls;
+  final String imageUrl;
   final int itemCount;
   final double price;
   final String currency;
@@ -15,9 +15,9 @@ class FeedEntryModel extends Equatable {
   final String category;
   final String releaseDate;
 
-  FeedEntryModel({
+  const FeedEntryModel({
     required this.name,
-    required this.imageUrls,
+    required this.imageUrl,
     required this.itemCount,
     required this.price,
     required this.currency,
@@ -33,9 +33,7 @@ class FeedEntryModel extends Equatable {
 
   factory FeedEntryModel.fromJson(Map<String, dynamic> json) {
     final name = json['im:name']['label'];
-    final imageUrls = (json['im:image'] as List)
-        .map((image) => image['label'] as String)
-        .toList();
+    final imageUrl = (json['im:image'] as List).last[['label']];
     final itemCount = int.parse(json['im:itemCount']['label']);
     final price = double.parse(json['im:price']['attributes']['amount']);
     final currency = json['im:price']['attributes']['currency'];
@@ -51,7 +49,7 @@ class FeedEntryModel extends Equatable {
 
     return FeedEntryModel(
       name: name,
-      imageUrls: imageUrls,
+      imageUrl: imageUrl,
       itemCount: itemCount,
       price: price,
       currency: currency,
@@ -69,7 +67,7 @@ class FeedEntryModel extends Equatable {
   @override
   List<Object?> get props => [
         name,
-        imageUrls,
+        imageUrl,
         itemCount,
         price,
         currency,
