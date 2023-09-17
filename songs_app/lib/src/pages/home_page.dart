@@ -34,7 +34,8 @@ class _HomePageState extends ConsumerState<HomePage> {
       },
       loading: () => const Scaffold(
         body: Center(
-          child: CircularProgressIndicator(),
+          child:
+              CircularProgressIndicator(), //TODO: implement loading using shimmer
         ),
       ),
       error: (error, stackTrace) {
