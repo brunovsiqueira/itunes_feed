@@ -17,7 +17,7 @@ class ItunesFeedRemoteDatsourceImpl implements ItunesFeedRemoteDatsource {
   );
 
   @override
-  Future<List<ItunesEntryModel>> getItunesFeed({
+  Future<List<ItunesEntryModel>> getFeedEntries({
     required itunesRssChannel,
     int? limit,
   }) async {
@@ -29,7 +29,7 @@ class ItunesFeedRemoteDatsourceImpl implements ItunesFeedRemoteDatsource {
           .map((e) => ItunesEntryModel.fromJson(e))
           .toList();
     } on DioException catch (e) {
-      throw GetItunesFeedException(dioException: e);
+      throw GetFeedEntriesException(dioException: e);
     }
   }
 }

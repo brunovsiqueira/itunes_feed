@@ -2,6 +2,6 @@
 
 import 'package:songs_app/src/errors/exceptions/server_exceptions.dart';
 
-class GetItunesFeedException extends ServerException {
-  GetItunesFeedException({required super.dioException});
+class GetFeedEntriesException extends ServerException {
+  GetFeedEntriesException({required super.dioException});
 }
