@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:songs_app/src/widgets/feed_entry_item_widget.dart';
 
 import '../models/feed_entry_model.dart';
 
@@ -65,8 +66,7 @@ class _FeedEntrySearchListWidgetState extends State<FeedEntrySearchListWidget> {
                 itemBuilder: (context, index) {
                   FeedEntryModel entryItem = filteredList[index];
 
-                  return Text(entryItem
-                      .name); //TODO: create better EntryItemWidget using main entry attributes
+                  return FeedEntryItemWidget(feedEntry: entryItem);
                 },
                 itemCount: filteredList.length,
               )),

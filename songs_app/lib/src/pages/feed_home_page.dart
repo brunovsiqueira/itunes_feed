@@ -10,10 +10,10 @@ class FeedHomePage extends ConsumerStatefulWidget {
   });
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _HomePageState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _FeedHomePageState();
 }
 
-class _HomePageState extends ConsumerState<FeedHomePage> {
+class _FeedHomePageState extends ConsumerState<FeedHomePage> {
   List<FeedEntryModel> filteredList = [];
 
   @override
@@ -25,7 +25,7 @@ class _HomePageState extends ConsumerState<FeedHomePage> {
       data: (entryList) {
         return Scaffold(
           appBar: AppBar(
-            title: const Text('Top 100 Itunes songs'),
+            title: const Text('Top 100 Itunes'),
           ),
           body: FeedEntrySearchListWidget(
             entryList: entryList,
@@ -39,7 +39,11 @@ class _HomePageState extends ConsumerState<FeedHomePage> {
         ),
       ),
       error: (error, stackTrace) {
-        return Scaffold(body: Text('Error'));
+        return Scaffold(
+            appBar: AppBar(
+              title: const Text('Top 100 Itunes'),
+            ),
+            body: Text('Error'));
         // return FailureWidget(
         //   failure: error as BaseFailure,
         //   refreshCallback: () {

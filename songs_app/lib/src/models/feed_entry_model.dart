@@ -13,7 +13,7 @@ class FeedEntryModel extends Equatable {
   final String id;
   final String artist;
   final String category;
-  final String releaseDate;
+  final DateTime releaseDate;
 
   const FeedEntryModel({
     required this.name,
@@ -33,7 +33,7 @@ class FeedEntryModel extends Equatable {
 
   factory FeedEntryModel.fromJson(Map<String, dynamic> json) {
     final name = json['im:name']['label'];
-    final imageUrl = (json['im:image'] as List).last[['label']];
+    final imageUrl = (json['im:image'] as List).last['label'];
     final itemCount = int.parse(json['im:itemCount']['label']);
     final price = double.parse(json['im:price']['attributes']['amount']);
     final currency = json['im:price']['attributes']['currency'];
@@ -45,7 +45,7 @@ class FeedEntryModel extends Equatable {
     final id = json['id']['label'];
     final artist = json['im:artist']['label'];
     final category = json['category']['attributes']['term'];
-    final releaseDate = json['im:releaseDate']['label'];
+    final releaseDate = DateTime.parse(json['im:releaseDate']['label']);
 
     return FeedEntryModel(
       name: name,
