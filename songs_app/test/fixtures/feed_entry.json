@@ -1,0 +1,86 @@
+{
+    "im:name": {
+        "label": "I've Tried Everything But Therapy (Part 1)"
+    },
+    "im:image": [
+        {
+            "label": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/36/19/66/36196640-1561-dc5e-c6bc-1e5f4befa583/093624856771.jpg/55x55bb.png",
+            "attributes": {
+                "height": "55"
+            }
+        },
+        {
+            "label": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/36/19/66/36196640-1561-dc5e-c6bc-1e5f4befa583/093624856771.jpg/60x60bb.png",
+            "attributes": {
+                "height": "60"
+            }
+        },
+        {
+            "label": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/36/19/66/36196640-1561-dc5e-c6bc-1e5f4befa583/093624856771.jpg/170x170bb.png",
+            "attributes": {
+                "height": "170"
+            }
+        }
+    ],
+    "im:itemCount": {
+        "label": "10"
+    },
+    "im:price": {
+        "label": "$7.99",
+        "attributes": {
+            "amount": "7.99",
+            "currency": "USD"
+        }
+    },
+    "im:contentType": {
+        "im:contentType": {
+            "attributes": {
+                "term": "Album",
+                "label": "Album"
+            }
+        },
+        "attributes": {
+            "term": "Music",
+            "label": "Music"
+        }
+    },
+    "rights": {
+        "label": "℗ 2023 SWIMS Int. under exclusive license to Warner Records Inc."
+    },
+    "title": {
+        "label": "I've Tried Everything But Therapy (Part 1) - Teddy Swims"
+    },
+    "link": {
+        "attributes": {
+            "rel": "alternate",
+            "type": "text/html",
+            "href": "https://music.apple.com/us/album/ive-tried-everything-but-therapy-part-1/1691699589?uo=2"
+        }
+    },
+    "id": {
+        "label": "https://music.apple.com/us/album/ive-tried-everything-but-therapy-part-1/1691699589?uo=2",
+        "attributes": {
+            "im:id": "1691699589"
+        }
+    },
+    "im:artist": {
+        "label": "Teddy Swims",
+        "attributes": {
+            "href": "https://music.apple.com/us/artist/teddy-swims/1462541757?uo=2"
+        }
+    },
+    "category": {
+        "attributes": {
+            "im:id": "14",
+            "term": "Pop",
+            "scheme": "https://music.apple.com/us/genre/music-pop/id14?uo=2",
+            "label": "Pop"
+        }
+    },
+    "im:releaseDate": {
+        "label": "2023-09-15T00:00:00-07:00",
+        "attributes": {
+            "label": "September 15, 2023"
+        }
+    }
+}
