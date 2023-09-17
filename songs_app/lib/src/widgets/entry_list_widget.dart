@@ -65,7 +65,8 @@ class _EntrySearchListWidgetState extends State<EntrySearchListWidget> {
                 itemBuilder: (context, index) {
                   ItunesEntryModel entryItem = filteredList[index];
 
-                  return Text(entryItem.name); //TODO: create EntryItemWidget
+                  return Text(entryItem
+                      .name); //TODO: create better EntryItemWidget using main entry attributes
                 },
                 itemCount: filteredList.length,
               )),
