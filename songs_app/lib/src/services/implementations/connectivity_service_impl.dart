@@ -4,13 +4,14 @@ import 'package:internet_connection_checker_plus/internet_connection_checker_plu
 import '../../errors/failures/base_failure.dart';
 import '../../errors/failures/connectivity_failures.dart';
 import '../interfaces/connectivity_service.dart';
+import '../interfaces/logger_service.dart';
 
 class ConnectivityServiceImpl implements ConnectivityService {
-  //final LoggerService _loggerService;
+  final LoggerService _loggerService;
   final InternetConnection internetConnection;
 
   ConnectivityServiceImpl(
-    //this._loggerService,
+    this._loggerService,
     this.internetConnection,
   );
 
@@ -24,7 +25,7 @@ class ConnectivityServiceImpl implements ConnectivityService {
         exception: e,
         stackTrace: stackTrace,
       );
-      //_loggerService.logFailure(failure: failure);
+      _loggerService.logFailure(failure: failure);
     }
     return Left(failure);
   }
