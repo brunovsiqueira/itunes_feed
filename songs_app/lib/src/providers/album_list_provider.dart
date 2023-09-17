@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -8,7 +10,7 @@ final albumListProviderProvider =
   //TODO: separate API call on a datasource + service, making appropriate error handling
   Response response = await Dio().get(
       'https://itunes.apple.com/us/rss/topalbums/limit=100/json?term=Oliver');
-  return (response.data as List)
+  return (jsonDecode(response.data)['feed']['entry'] as List)
       .map((e) => ItunesEntryModel.fromJson(e))
       .toList();
 });
