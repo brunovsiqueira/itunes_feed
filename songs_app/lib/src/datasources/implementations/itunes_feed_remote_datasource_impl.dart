@@ -8,13 +8,13 @@ import '../../errors/exceptions/itunes_feed_exceptions.dart';
 import '../../network/interfaces/api.dart';
 
 class ItunesFeedRemoteDatsourceImpl implements ItunesFeedRemoteDatsource {
-  final API _api;
-  final String _baseUrl;
+  final API api;
+  final String baseUrl;
 
-  ItunesFeedRemoteDatsourceImpl(
-    this._api,
-    this._baseUrl,
-  );
+  ItunesFeedRemoteDatsourceImpl({
+    required this.api,
+    required this.baseUrl,
+  });
 
   @override
   Future<List<ItunesEntryModel>> getFeedEntries({
@@ -22,9 +22,9 @@ class ItunesFeedRemoteDatsourceImpl implements ItunesFeedRemoteDatsource {
     int? limit,
   }) async {
     final String url =
-        '$_baseUrl/us/${itunesRssChannel.name}/topalbums/limit=${limit ?? 100}/json';
+        '$baseUrl/us/${itunesRssChannel.name}/topalbums/limit=${limit ?? 100}/json';
     try {
-      Response response = await _api.httpGet(url: url);
+      Response response = await api.httpGet(url: url);
       return (jsonDecode(response.data)['feed']['entry'] as List)
           .map((e) => ItunesEntryModel.fromJson(e))
           .toList();
