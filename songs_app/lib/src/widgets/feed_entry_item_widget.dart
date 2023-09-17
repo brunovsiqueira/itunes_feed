@@ -27,7 +27,7 @@ class FeedEntryItemWidget extends StatelessWidget {
             ]),
           ),
           leading: Hero(
-            tag: 'rover_image${feedEntry.id}',
+            tag: 'feed_image${feedEntry.id}',
             child: CachedNetworkImage(
               imageUrl: feedEntry.imageUrl,
               height: 200,
