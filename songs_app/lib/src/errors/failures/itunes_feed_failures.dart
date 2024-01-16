@@ -5,7 +5,8 @@ class GetFeedEntriesFailure extends ServerFailure {
   const GetFeedEntriesFailure({
     super.message = 'Error getting itunes feed entries. Try again later.',
     required super.exception,
-    super.level = Level.SEVERE,
+    super.level = Level
+        .SEVERE, //TODO: do not set severe, instead use level from exception when logging
     super.stackTrace,
   });
 }
